@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .colored {
+            width: 500px;
+            height: 500px;
+            background-color: red
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="colored"></div>
+        <button>color</button>
+    </section>
+    <script>
+        var $colored = document.querySelector("div")
+        var $button = document.getElementsByTagName("button")[0]
+        $button.addEventListener("click", function () {
+            $colored.style.backgroundColor = getRandomColor()
+        })
+
+        function getRandomColor() {
+  var min = 0;
+  var max = 255;
+  
+  var num1 = Math.floor(Math.random() * (max - min + 1)) + min;
+  var num2 = Math.floor(Math.random() * (max - min + 1)) + min;
+  var num3 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  return `rgb(${num1}, ${num2}, ${num3})`;
+}
+
+    </script>
+</body>
+
+</html>
